@@ -38,10 +38,11 @@ namespace DaprClientDemo
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCloudEvents();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapSubscribeHandler();
             });
         }
     }
